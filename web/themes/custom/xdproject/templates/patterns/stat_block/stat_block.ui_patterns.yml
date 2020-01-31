@@ -1,0 +1,7 @@
+stat_block:
+  label: 'Stat Block'
+  fields:
+    nid:
+      type: 'text'
+      label: 'NID'
+      preview: '123'

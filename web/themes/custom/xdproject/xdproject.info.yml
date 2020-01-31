@@ -1,0 +1,20 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'XDProject'
+description: 'A sub-theme based on bootstrap.'
+package: 'Bootstrap'
+
+regions:
+  notification: 'Notification'
+  navigation: 'Navigation'
+  content: 'Content'
+  footer_first: 'Footer First'
+  footer_second: 'Footer Second'
+  footer_bottom: 'Footer Bottom'
+  page_top: 'Page top'
+
+libraries-extend:
+  bootstrap/framework:
+    - xdproject/framework

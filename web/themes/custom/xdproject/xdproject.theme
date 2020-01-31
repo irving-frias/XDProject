@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\views\Views;
+
+function xdproject_preprocess_paragraph(&$variables){
+
+  // Preprocess paragraph fields.
+  foreach ($variables['content'] as $field) {
+    if (!isset($field['#field_type'])) {
+      continue;
+    }
+
+    $field_name = $field['#field_name'];
+
+    switch ($field['#field_type']) {
+      case 'link':
+        xdproject_preprocess_paragraph__link($variables, $field_name);
+        break;
+    }
+  }
+
+  xdproject_preprocess_paragraph_notification_item($variables);
+}
+
+
+ /** 
+  * Preprocess paragraph link.
+  */
+function xdproject_preprocess_paragraph__link(&$variables, &$field) {
+  $paragraph = $variables['elements']['#paragraph'];
+
+  if (!$paragraph->hasField($field)) {
+    return;
+  }
+
+  $cta = $paragraph->get('field_cta')->getValue();
+
+  $variables[$field . '_text'] = $cta[0]['title'];
+  $variables[$field . '_url'] = $cta[0]['uri'];
+  $variables[$field . '_class'] = $cta[0]['options']['attributes']['class'];
+  $variables[$field . '_target'] = $cta[0]['options']['attributes']['target'];
+}
+
+function xdproject_preprocess_paragraph_notification_item(&$variables){
+  $elements = $variables['elements'];
+  $paragraph = $elements['#paragraph'];
+
+  if ($paragraph->getType() != 'notification_item') {
+    return;
+  }
+
+}

@@ -1,0 +1,24 @@
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% block paragraph %}
+  {% block content %}
+    {{ pattern('notification_item', {
+      nid: paragraph.id(),
+      image: content.field_image|field_value,
+      title: content.field_title|field_value,
+      cta_text: field_cta_text,
+      cta_url: field_cta_url,
+      cta_class: field_cta_class,
+      cta_target: field_cta_target
+    }) }}
+  {% endblock %}
+{% endblock paragraph %}
+

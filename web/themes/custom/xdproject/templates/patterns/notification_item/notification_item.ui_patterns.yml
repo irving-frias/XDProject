@@ -1,0 +1,35 @@
+notification_item:
+  label: 'Notification Item'
+  fields:
+    nid:
+      type: 'text'
+      label: 'NID'
+      preview: '123'
+    image:
+      type: 'image'
+      label: 'Image'
+      preview:
+        theme: 'image'
+        uri: '/themes/custom/xdproject/templates/patterns/notification_item/notification_item.png'
+        width: 32
+        height: 32
+    title:
+      type: 'text'
+      label: 'Title'
+      preview: 'December 1, 2019 Board Meeting Going on Now'
+    cta_text:
+      type: 'text'
+      label: 'CTA Text'
+      preview: 'Wacth Live'
+    cta_class:
+      type: 'text'
+      label: 'CTA Class'
+      preview: 'cta'
+    cta_url:
+      type: 'text'
+      label: 'CTA url'
+      preview: 'https://www.google.com'
+    cta_target:
+      type: 'text'
+      label: 'CTA Target'
+      preview: '_blank'
