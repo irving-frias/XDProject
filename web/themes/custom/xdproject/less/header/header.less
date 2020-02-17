@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  height: 76px;
+  .header-nav{
+    .region{
+      a.logo{
+        margin: 0;
+        height: 76px;
+        width: 15%;
+        display: block;
+
+        img{
+          height: 100%;
+        }
+      }
+
+      #block-headerlinks{
+        width: 60%;
+        float: left;
+
+        .menu--header-links{
+          li{
+            display: inline-block;
+
+            a{
+              
+              &:hover{
+                background-color: transparent;
+              }
+
+              &:after{
+                content: '\f19c';
+                font-family: 'FontAwesome';
+              }
+            }
+          }
+        }
+      }
+
+      #block-searchform{
+        width: 25%;
+        float: left;
+      }
+
+      &:after{
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+  }
+}

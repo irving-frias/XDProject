@@ -6889,6 +6889,49 @@ button.close {
  * Mixins.
  */
 /**
+ * Global
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  height: 76px;
+}
+header .header-nav .region a.logo {
+  margin: 0;
+  height: 76px;
+  width: 15%;
+  display: block;
+}
+header .header-nav .region a.logo img {
+  height: 100%;
+}
+header .header-nav .region #block-headerlinks {
+  width: 60%;
+  float: left;
+}
+header .header-nav .region #block-headerlinks .menu--header-links li {
+  display: inline-block;
+}
+header .header-nav .region #block-headerlinks .menu--header-links li a:hover {
+  background-color: transparent;
+}
+header .header-nav .region #block-headerlinks .menu--header-links li a:after {
+  content: '\f19c';
+  font-family: 'FontAwesome';
+}
+header .header-nav .region #block-searchform {
+  width: 25%;
+  float: left;
+}
+header .header-nav .region:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/**
  * Patterns.
  */
 .notification-item .limiter {
